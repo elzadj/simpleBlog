@@ -1,0 +1,54 @@
+[[$pageHeader]]
+<div class="blog">
+  <div class="row">
+    <div class="col-9">
+      <div class="row">
+          <h1 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h1>
+         
+          <h5>
+            Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
+            Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &key=`tag` &target=`1`]]`]] | 
+            <a href="[[~[[*id]]]]#comments" class="comments">
+                Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
+            </a>
+          </h5>
+          
+          <div class="row">
+            <p>[[*introtext]]</p>
+            <hr />
+            [[*content]]
+          </div> <!-- /row --> 
+          
+          <div class="postmeta">
+            [[*tags:notempty=`<span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &key=`tag` &target=`1`]]</span>`]]
+            <br class="clear" />
+          </div> <!-- /postmeta -->
+          
+          <hr />
+          
+          <div class="post-comments" id="comments">[[!Quip?
+             &thread=`blog-post-[[*id]]`
+             &replyResourceId=`123`
+             &closeAfter=`30`
+            ]]
+            <br /><br />
+            [[!QuipReply?
+               &thread=`blog-post-[[*id]]`
+               &notifyEmails=`my@email.com`
+               &moderate=`1`
+               &moderatorGroup=`Moderators`
+               &closeAfter=`30`
+            ]]
+          </div> <!-- /post-comments -->
+       </div> <!-- /row -->
+    </div> <!-- /col-9 -->
+    
+   <div class="col-3">
+    <ul class="navigation">
+        [[!tagLister? &tv=`tags` &target=`1`]]
+    </ul>
+    [[$bannerRight]]
+   </div> <!-- /col-3 -->
+ </div> <!-- /row -->
+</div> <!-- /blog -->
+[[$pageFooter]]

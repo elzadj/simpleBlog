@@ -1,0 +1,19 @@
+<div class="post">
+    <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
+    <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
+ [[+tv.tags:notempty=` | <span class="tags">Tags: 
+[[!tolinks? &items=`[[+tv.tags]]` &keyTag=`tag` &target=`1`]]
+</span>`]]</p>
+    <div class="entry">
+    <p>[[+introtext]]</p>
+    </div>
+    <p class="postmeta">
+      <span class="links">
+<a href="[[~[[+id]]]]" class="readmore">Read more</a>
+| <a href="[[~[[+id]]]]#comments" class="comments">
+    Comments ([[!QuipCount? &thread=`blog-post-[[+id]]`]])
+  </a>
+| <span class="date">[[+publishedon:strtotime:date=`%b %d, %Y`]]</span>
+      </span>
+    </p>
+</div>
